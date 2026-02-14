@@ -1,32 +1,34 @@
 openapi: 3.0.4
 info:
   title: Zip Codes Lookup
-  description: Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It returns the zip codes of the city.
+  description: >-
+    Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It
+    returns the zip codes of the city.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/zipcodes:
     get:
       summary: Lookup Zip Code
-      description: Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It returns the zip codes of the city.
+      description: Lookup the zip code information
       operationId: zipcodes
       parameters:
-      - name: zip
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The zip code for which you want to get the data (e.g., 64082)
-        example: '64082'
+        - name: zip
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The zip code for which you want to get the data
+          example: '64082'
       responses:
         '200':
           description: Successful Response
@@ -42,11 +44,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   zipcode: '64082'
                   state_abbr: MO
@@ -59,7 +61,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -67,4 +69,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
