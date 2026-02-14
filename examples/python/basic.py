@@ -17,14 +17,11 @@ def call_zipcodes_api():
     Make a GET request to the Zip Codes Lookup API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;zip&#x27;: &#x27;64082&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
