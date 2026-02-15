@@ -30,7 +30,6 @@ namespace APIVerve.API.ZipCodesLookup
     public partial class Data
     {
         [JsonProperty("zipcode")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Zipcode { get; set; }
 
         [JsonProperty("state_abbr")]
