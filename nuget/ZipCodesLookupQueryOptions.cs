@@ -11,8 +11,7 @@ namespace APIVerve.API.ZipCodesLookup
     public class ZipCodesLookupQueryOptions
     {
         /// <summary>
-        /// The zip code for which you want to get the data (e.g., 64082)
-        /// Example: 64082
+        /// The zip code for which you want to get the data
         /// </summary>
         [JsonProperty("zip")]
         public string Zip { get; set; }
