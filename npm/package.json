@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/zipcodes",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It returns the zip codes of the city.",
   "main": "index.js",
   "types": "index.d.ts",
