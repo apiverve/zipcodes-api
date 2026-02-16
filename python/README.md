@@ -221,8 +221,9 @@ from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient
 
 api = ZipcodesAPIClient("[YOUR_API_KEY]")
 
+query = { "zip": "64082" }
+
 try:
-    query = { "zip": "64082" }
     result = api.execute(query)
     print(result)
 finally:
