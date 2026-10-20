@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/zipcodes",
-  "version": "1.2.0",
-  "description": "Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It returns the zip codes of the city.",
+  "version": "1.2.2",
+  "description": "Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "zip codes", "zip code lookup", "zip codes api", "zip codes tool", "zip codes software"
+    "zip code lookup api", "zipcode api", "free zip code lookup api", "get city and state from zip code api", "zip code to city"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/zipcodes-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/zipcodes?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/zipcodes?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
