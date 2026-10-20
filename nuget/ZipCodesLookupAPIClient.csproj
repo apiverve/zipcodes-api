@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Title>ZipCodesLookup</Title>
-    <Version>1.2.0</Version>
+    <Title>Zip Codes Lookup API</Title>
+    <Version>1.2.2</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -12,30 +12,32 @@
 
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <PackageProjectUrl>https://apiverve.com/marketplace/zipcodes?utm_source=nuget&amp;utm_medium=homepage</PackageProjectUrl>
+    <PackageProjectUrl>https://apiverve.com/marketplace/zipcodes?utm_source=nuget&amp;utm_medium=referral&amp;utm_content=homepage</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
-    <Description>Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It returns the zip codes of the city.</Description>
+    <Description>Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.</Description>
     <RepositoryUrl>https://github.com/apiverve/zipcodes-api</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>zip codes;zip code lookup;zip codes api;zip codes tool;zip codes software;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
+    <PackageTags>zip-code-lookup-api;zipcode-api;free-zip-code-lookup-api;get-city-and-state-from-zip-code-api;zip-code-to-city;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
     <Copyright>©2026 APIVerve. All Rights Reserved</Copyright>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageIcon>favicon@128.png</PackageIcon>
     <BaseOutputPath>.\bin</BaseOutputPath>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <PackageId>APIVerve.API.ZipCodesLookup</PackageId>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
 
-    <!-- SourceLink Support -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Built from a generator checkout, not this repo: its git state would stamp the wrong
+         commit onto RepositoryUrl. -->
+    <EnableSourceLink>false</EnableSourceLink>
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
     <!-- Package Release Notes -->
-    <PackageReleaseNotes>Initial release of ZipCodesLookup API client. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
+    <PackageReleaseNotes>Zip Codes Lookup API client for .NET, version 1.2.2. Features include async/await support, automatic retries, custom headers, request logging, and cancellation token support.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -69,7 +71,6 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
