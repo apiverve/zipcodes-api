@@ -2,8 +2,9 @@ openapi: 3.0.4
 info:
   title: Zip Codes Lookup
   description: >-
-    Zip Codes Lookup is a simple tool for looking up the zip codes of a city. It
-    returns the zip codes of the city.
+    Zip Codes Lookup finds all postal codes within a US city or resolves a
+    five-digit ZIP code to its city and state. Paid plans add geographic
+    coordinates.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +19,7 @@ servers:
 paths:
   /v1/zipcodes:
     get:
-      summary: Lookup Zip Code
+      summary: Zip Codes Lookup
       description: Lookup the zip code information
       operationId: zipcodes
       parameters:
