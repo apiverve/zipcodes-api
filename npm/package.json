@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/zipcodes",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.",
   "main": "index.js",
   "types": "index.d.ts",
