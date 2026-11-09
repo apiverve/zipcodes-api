@@ -1,6 +1,6 @@
 # [Zip Codes Lookup API](https://apiverve.com/marketplace/zipcodes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 The Zip Codes Lookup API provides a simple, reliable way to integrate zip codes lookup functionality into your applications. Built for developers who need production-ready zip codes lookup capabilities without the complexity of building from scratch.
 
@@ -216,7 +216,15 @@ A real response from the Zip Codes Lookup API:
     "latitude": "38.850243",
     "longitude": "-94.39570",
     "city": "Lees Summit",
-    "state": "Missouri"
+    "state": "Missouri",
+    "timezone": "America/Chicago",
+    "distance": {
+      "zipcode": "64106",
+      "city": "Kansas City",
+      "state_abbr": "MO",
+      "miles": 19.94,
+      "kilometers": 32.09
+    }
   }
 }
 ```

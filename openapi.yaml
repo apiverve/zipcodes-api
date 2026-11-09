@@ -3,8 +3,8 @@ info:
   title: Zip Codes Lookup
   description: >-
     Zip Codes Lookup finds all postal codes within a US city or resolves a
-    five-digit ZIP code to its city and state. Paid plans add geographic
-    coordinates.
+    five-digit ZIP code to its city and state. Paid plans add the IANA time
+    zone, geographic coordinates and the distance from the ZIP to a second ZIP.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -20,7 +20,9 @@ paths:
   /v1/zipcodes:
     get:
       summary: Zip Codes Lookup
-      description: Lookup the zip code information
+      description: >-
+        Lookup the city, state and (paid plans) time zone of a zip code,
+        optionally with the distance to a second zip code
       operationId: zipcodes
       parameters:
         - name: zip
@@ -30,6 +32,15 @@ paths:
           required: true
           description: The zip code for which you want to get the data
           example: '64082'
+        - name: distanceTo
+          in: query
+          schema:
+            type: string
+          required: false
+          description: >-
+            A second US ZIP code; adds a distance object with the straight-line
+            distance between the two ZIP centroids
+          example: '64106'
       responses:
         '200':
           description: Successful Response
@@ -57,6 +68,13 @@ paths:
                   longitude: '-94.39570'
                   city: Lees Summit
                   state: Missouri
+                  timezone: America/Chicago
+                  distance:
+                    zipcode: '64106'
+                    city: Kansas City
+                    state_abbr: MO
+                    miles: 19.94
+                    kilometers: 32.09
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
