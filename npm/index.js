@@ -30,7 +30,7 @@ class zipcodesWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/zipcodes';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"zip":{"type":"string","required":true,"minLength":5,"maxLength":5}};
+        this.validationRules = {"zip":{"type":"string","required":true,"minLength":5,"maxLength":5},"distanceTo":{"type":"string","required":false,"minLength":5,"maxLength":5}};
     }
 
     /**

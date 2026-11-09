@@ -15,7 +15,8 @@ const api = new zipcodesAPI({
 
 // Example query
 var query = {
-  zip: "64082"
+  zip: "64082",
+  distanceTo: "64106"
 };
 
 // Make the API request using callback

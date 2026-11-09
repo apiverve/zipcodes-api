@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/zipcodes",
-  "version": "1.2.4",
-  "description": "Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.",
+  "version": "1.2.5",
+  "description": "Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,

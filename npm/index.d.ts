@@ -31,6 +31,16 @@ declare module '@apiverve/zipcodes' {
       longitude: null | string;
       city:      null | string;
       state:     null | string;
+      timezone:  null | string;
+      distance:  Distance;
+  }
+  
+  interface Distance {
+      zipcode:    null | string;
+      city:       null | string;
+      stateAbbr:  null | string;
+      miles:      number | null;
+      kilometers: number | null;
   }
 
   export default class zipcodesWrapper {

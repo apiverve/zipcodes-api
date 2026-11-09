@@ -1,6 +1,6 @@
 # Zip Codes Lookup API
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/zipcodes.svg)](https://www.npmjs.com/package/@apiverve/zipcodes)
 
@@ -57,7 +57,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  zip: "64082"
+  zip: "64082",
+  distanceTo: "64106"
 };
 
 api.execute(query, function (error, data) {
@@ -77,7 +78,8 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  zip: "64082"
+  zip: "64082",
+  distanceTo: "64106"
 };
 
 api.execute(query)
@@ -98,7 +100,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  zip: "64082"
+  zip: "64082",
+  distanceTo: "64106"
 };
 
     try {
@@ -124,7 +127,15 @@ async function makeRequest() {
     "latitude": "38.850243",
     "longitude": "-94.39570",
     "city": "Lees Summit",
-    "state": "Missouri"
+    "state": "Missouri",
+    "timezone": "America/Chicago",
+    "distance": {
+      "zipcode": "64106",
+      "city": "Kansas City",
+      "state_abbr": "MO",
+      "miles": 19.94,
+      "kilometers": 32.09
+    }
   }
 }
 ```
