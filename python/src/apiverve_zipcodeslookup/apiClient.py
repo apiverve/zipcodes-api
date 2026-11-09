@@ -24,7 +24,8 @@ class ValidationError(ZipcodesAPIClientError):
 class ZipcodesAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "zip": {"type": "string", "required": True, "minLength": 5, "maxLength": 5}
+        "zip": {"type": "string", "required": True, "minLength": 5, "maxLength": 5},
+        "distanceTo": {"type": "string", "required": False, "minLength": 5, "maxLength": 5}
     }
 
     # Format validation patterns

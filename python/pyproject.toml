@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-zipcodeslookup"
-version = "1.2.4"
+version = "1.2.5"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates."
+description = "Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP."
 keywords = ["zip code lookup api", "zipcode api", "free zip code lookup api", "get city and state from zip code api", "zip code to city"]
 readme = "README.md"
 requires-python = ">=3.9"

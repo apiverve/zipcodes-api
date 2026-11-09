@@ -1,7 +1,7 @@
 Zip Codes Lookup API
 ============
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-zipcodeslookup.svg)](https://pypi.org/project/apiverve-zipcodeslookup/)
@@ -43,7 +43,10 @@ from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient
 # Initialize the client with your APIVerve API key
 api = ZipcodesAPIClient("[YOUR_API_KEY]")
 
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 
 try:
     # Make the API call
@@ -81,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 ```
 
 ###### Simple Request
@@ -106,7 +112,15 @@ print(result)
     "latitude": "38.850243",
     "longitude": "-94.39570",
     "city": "Lees Summit",
-    "state": "Missouri"
+    "state": "Missouri",
+    "timezone": "America/Chicago",
+    "distance": {
+      "zipcode": "64106",
+      "city": "Kansas City",
+      "state_abbr": "MO",
+      "miles": 19.94,
+      "kilometers": 32.09
+    }
   }
 }
 ```
@@ -124,7 +138,10 @@ from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient, ZipcodesAPIClie
 
 api = ZipcodesAPIClient("[YOUR_API_KEY]")
 
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +162,10 @@ from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient, ZipcodesAPIClie
 
 api = ZipcodesAPIClient("[YOUR_API_KEY]")
 
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +199,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient, ZipcodesAPIClientError
 
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 
 # Using context manager ensures proper cleanup
 with ZipcodesAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +228,10 @@ from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient
 # Enable debug mode
 api = ZipcodesAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,7 +246,10 @@ from apiverve_zipcodeslookup.apiClient import ZipcodesAPIClient
 
 api = ZipcodesAPIClient("[YOUR_API_KEY]")
 
-query = { "zip": "64082" }
+query = {
+    "zip": "64082",
+    "distanceTo": "64106"
+}
 
 try:
     result = api.execute(query)
