@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Zipcodes::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ zip: "64082" })
+    #   response = client.execute({ zip: "64082", distanceTo: "64106" })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/zipcodes?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'zip' => { type: 'string', required: true, min_length: 5, max_length: 5 } }
+      VALIDATION_RULES = { 'zip' => { type: 'string', required: true, min_length: 5, max_length: 5 }, 'distanceTo' => { type: 'string', required: false, min_length: 5, max_length: 5 } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {

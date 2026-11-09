@@ -1,6 +1,6 @@
 # Zip Codes Lookup API - Ruby Gem
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 ## Installation
 
@@ -35,7 +35,10 @@ require 'apiverve_zipcodes'
 client = APIVerve::Zipcodes::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ zip: "64082" })
+response = client.execute({
+  zip: "64082",
+  distanceTo: "64106"
+})
 
 # Print the response
 puts response
@@ -46,7 +49,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ zip: "64082" })
+  response = client.execute({ zip: "64082", distanceTo: "64106" })
   puts response["data"]
 rescue APIVerve::Zipcodes::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -78,7 +81,15 @@ client = APIVerve::Zipcodes::Client.new(
     "latitude": "38.850243",
     "longitude": "-94.39570",
     "city": "Lees Summit",
-    "state": "Missouri"
+    "state": "Missouri",
+    "timezone": "America/Chicago",
+    "distance": {
+      "zipcode": "64106",
+      "city": "Kansas City",
+      "state_abbr": "MO",
+      "miles": 19.94,
+      "kilometers": 32.09
+    }
   }
 }
 ```
