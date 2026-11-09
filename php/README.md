@@ -1,6 +1,6 @@
 # Zip Codes Lookup API - PHP Package
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 ## Installation
 
@@ -27,7 +27,10 @@ use APIVerve\Zipcodes\Client;
 $client = new Client('YOUR_API_KEY');
 
 // Make a request
-$response = $client->execute(['zip' => '64082']);
+$response = $client->execute([
+    'zip' => '64082',
+    'distanceTo' => '64106'
+]);
 
 // Print the response
 print_r($response);
@@ -42,7 +45,7 @@ use APIVerve\Zipcodes\Exceptions\APIException;
 use APIVerve\Zipcodes\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['zip' => '64082']);
+    $response = $client->execute(['zip' => '64082', 'distanceTo' => '64106']);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -74,7 +77,15 @@ $client = new Client(
     "latitude": "38.850243",
     "longitude": "-94.39570",
     "city": "Lees Summit",
-    "state": "Missouri"
+    "state": "Missouri",
+    "timezone": "America/Chicago",
+    "distance": {
+      "zipcode": "64106",
+      "city": "Kansas City",
+      "state_abbr": "MO",
+      "miles": 19.94,
+      "kilometers": 32.09
+    }
   }
 }
 ```

@@ -15,7 +15,7 @@ use APIVerve\Zipcodes\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['zip' => '64082']);
+ * $response = $client->execute(['zip' => '64082', 'distanceTo' => '64106']);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'zip' => ['type' => 'string', 'required' => true, 'minLength' => 5, 'maxLength' => 5]
+        'zip' => ['type' => 'string', 'required' => true, 'minLength' => 5, 'maxLength' => 5],
+        'distanceTo' => ['type' => 'string', 'required' => false, 'minLength' => 5, 'maxLength' => 5]
     ];
 
     /**
