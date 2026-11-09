@@ -15,5 +15,11 @@ namespace APIVerve.API.ZipCodesLookup
         /// </summary>
         [JsonProperty("zip")]
         public string Zip { get; set; }
+
+        /// <summary>
+        /// A second US ZIP code; adds a distance object with the straight-line distance between the two ZIP centroids
+        /// </summary>
+        [JsonProperty("distanceTo")]
+        public string DistanceTo { get; set; }
     }
 }

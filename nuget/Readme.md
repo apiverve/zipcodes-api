@@ -1,7 +1,7 @@
 Zip Codes Lookup API
 ============
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add geographic coordinates.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.ZipCodesLookup.svg)](https://www.nuget.org/packages/APIVerve.API.ZipCodesLookup)
@@ -60,7 +60,8 @@ class Program
         var apiClient = new ZipCodesLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ZipCodesLookupQueryOptions {
-            Zip = "64082"
+            Zip = "64082",
+            DistanceTo = "64106"
         };
 
         // Make the API call
@@ -124,7 +125,8 @@ public class Example
         var apiClient = new ZipCodesLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ZipCodesLookupQueryOptions {
-            Zip = "64082"
+            Zip = "64082",
+            DistanceTo = "64106"
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -156,7 +158,8 @@ public class Example
         var apiClient = new ZipCodesLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ZipCodesLookupQueryOptions {
-            Zip = "64082"
+            Zip = "64082",
+            DistanceTo = "64106"
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -193,7 +196,8 @@ public class Example
         var apiClient = new ZipCodesLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new ZipCodesLookupQueryOptions {
-            Zip = "64082"
+            Zip = "64082",
+            DistanceTo = "64106"
         };
 
         try
@@ -249,7 +253,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new ZipCodesLookupQueryOptions {
-            Zip = "64082"
+            Zip = "64082",
+            DistanceTo = "64106"
         };
 
         try
@@ -290,7 +295,8 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new ZipCodesLookupQueryOptions {
-    Zip = "64082"
+    Zip = "64082",
+    DistanceTo = "64106"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,7 +322,8 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new ZipCodesLookupQueryOptions {
-    Zip = "64082"
+    Zip = "64082",
+    DistanceTo = "64106"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,7 +341,8 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new ZipCodesLookupQueryOptions {
-    Zip = "64082"
+    Zip = "64082",
+    DistanceTo = "64106"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,7 +354,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new ZipCodesLookupQueryOptions {
-    Zip = "64082"
+    Zip = "64082",
+    DistanceTo = "64106"
 };
 
 using (var apiClient = new ZipCodesLookupAPIClient("[YOUR_API_KEY]"))
@@ -371,7 +380,15 @@ using (var apiClient = new ZipCodesLookupAPIClient("[YOUR_API_KEY]"))
     "latitude": "38.850243",
     "longitude": "-94.39570",
     "city": "Lees Summit",
-    "state": "Missouri"
+    "state": "Missouri",
+    "timezone": "America/Chicago",
+    "distance": {
+      "zipcode": "64106",
+      "city": "Kansas City",
+      "state_abbr": "MO",
+      "miles": 19.94,
+      "kilometers": 32.09
+    }
   }
 }
 ```

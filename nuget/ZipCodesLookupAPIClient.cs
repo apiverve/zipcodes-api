@@ -67,7 +67,8 @@ namespace APIVerve.API.ZipCodesLookup
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "zip", new ValidationRule { Type = "string", Required = true, MinLength = 5, MaxLength = 5 } }
+            { "zip", new ValidationRule { Type = "string", Required = true, MinLength = 5, MaxLength = 5 } },
+            { "distanceTo", new ValidationRule { Type = "string", Required = false, MinLength = 5, MaxLength = 5 } }
         };
 
         /// <summary>Format validation patterns</summary>

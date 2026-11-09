@@ -49,6 +49,30 @@ namespace APIVerve.API.ZipCodesLookup
 
         [JsonProperty("state")]
         public string State { get; set; }
+
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+
+        [JsonProperty("distance")]
+        public Distance Distance { get; set; }
+    }
+
+    public partial class Distance
+    {
+        [JsonProperty("zipcode")]
+        public long? Zipcode { get; set; }
+
+        [JsonProperty("city")]
+        public string City { get; set; }
+
+        [JsonProperty("state_abbr")]
+        public string StateAbbr { get; set; }
+
+        [JsonProperty("miles")]
+        public double? Miles { get; set; }
+
+        [JsonProperty("kilometers")]
+        public double? Kilometers { get; set; }
     }
 
     public partial class Premium
