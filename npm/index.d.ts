@@ -25,14 +25,24 @@ declare module '@apiverve/zipcodes' {
 
 
   interface ZipCodesLookupData {
-      zipcode:   null | string;
-      stateAbbr: null | string;
-      latitude:  null | string;
-      longitude: null | string;
-      city:      null | string;
-      state:     null | string;
-      timezone:  null | string;
-      distance:  Distance;
+      zipcode:    null | string;
+      stateAbbr:  null | string;
+      latitude:   null | string;
+      longitude:  null | string;
+      city:       null | string;
+      state:      null | string;
+      timezone:   null | string;
+      county:     null | string;
+      countyFIPS: null | string;
+      stateFIPS:  null | string;
+      counties:   County[];
+      distance:   Distance;
+  }
+  
+  interface County {
+      name:      null | string;
+      fips:      null | string;
+      landShare: number | null;
   }
   
   interface Distance {
