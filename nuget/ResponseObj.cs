@@ -53,8 +53,32 @@ namespace APIVerve.API.ZipCodesLookup
         [JsonProperty("timezone")]
         public string Timezone { get; set; }
 
+        [JsonProperty("county")]
+        public string County { get; set; }
+
+        [JsonProperty("countyFips")]
+        public long? CountyFips { get; set; }
+
+        [JsonProperty("stateFips")]
+        public long? StateFips { get; set; }
+
+        [JsonProperty("counties")]
+        public County[] Counties { get; set; }
+
         [JsonProperty("distance")]
         public Distance Distance { get; set; }
+    }
+
+    public partial class County
+    {
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("fips")]
+        public long? Fips { get; set; }
+
+        [JsonProperty("landShare")]
+        public double? LandShare { get; set; }
     }
 
     public partial class Distance
