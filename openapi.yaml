@@ -3,8 +3,10 @@ info:
   title: Zip Codes Lookup
   description: >-
     Zip Codes Lookup finds all postal codes within a US city or resolves a
-    five-digit ZIP code to its city and state. Paid plans add the IANA time
-    zone, geographic coordinates and the distance from the ZIP to a second ZIP.
+    five-digit ZIP code to its city and state. Every ZIP also returns its
+    primary county. Paid plans add the county and state FIPS codes, every county
+    a ZIP crosses with its land share, the IANA time zone, geographic
+    coordinates and the distance from the ZIP to a second ZIP.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -21,8 +23,9 @@ paths:
     get:
       summary: Zip Codes Lookup
       description: >-
-        Lookup the city, state and (paid plans) time zone of a zip code,
-        optionally with the distance to a second zip code
+        Lookup the city, state and county of a zip code; paid plans add the time
+        zone, FIPS codes, every county the ZIP crosses, and optionally the
+        distance to a second zip code
       operationId: zipcodes
       parameters:
         - name: zip
@@ -69,6 +72,16 @@ paths:
                   city: Lees Summit
                   state: Missouri
                   timezone: America/Chicago
+                  county: Jackson County
+                  countyFips: '29095'
+                  stateFips: '29'
+                  counties:
+                    - name: Jackson County
+                      fips: '29095'
+                      landShare: 0.9077
+                    - name: Cass County
+                      fips: '29037'
+                      landShare: 0.0923
                   distance:
                     zipcode: '64106'
                     city: Kansas City
