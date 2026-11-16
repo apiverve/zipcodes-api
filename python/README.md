@@ -1,7 +1,7 @@
 Zip Codes Lookup API
 ============
 
-Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Paid plans add the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
+Zip Codes Lookup finds all postal codes within a US city or resolves a five-digit ZIP code to its city and state. Every ZIP also returns its primary county. Paid plans add the county and state FIPS codes, every county a ZIP crosses with its land share, the IANA time zone, geographic coordinates and the distance from the ZIP to a second ZIP.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-zipcodeslookup.svg)](https://pypi.org/project/apiverve-zipcodeslookup/)
@@ -114,6 +114,21 @@ print(result)
     "city": "Lees Summit",
     "state": "Missouri",
     "timezone": "America/Chicago",
+    "county": "Jackson County",
+    "countyFips": "29095",
+    "stateFips": "29",
+    "counties": [
+      {
+        "name": "Jackson County",
+        "fips": "29095",
+        "landShare": 0.9077
+      },
+      {
+        "name": "Cass County",
+        "fips": "29037",
+        "landShare": 0.0923
+      }
+    ],
     "distance": {
       "zipcode": "64106",
       "city": "Kansas City",
